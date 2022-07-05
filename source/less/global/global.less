@@ -1,17 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body > * {
+  flex-shrink: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+body {
+  min-width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: @black;
+  background: @white;
 }
 
 .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
-  margin: -1px;
-  border: 0;
   padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
+  border: none;
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
