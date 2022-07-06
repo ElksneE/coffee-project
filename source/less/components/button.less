@@ -1,10 +1,25 @@
 .button {
   font-size: 16px;
-line-height: 24px;
-color: @white;
-text-align: center;
-background: @primary;
-border-radius: 4px;
-padding: 8px 20px;
-border: none;
+  line-height: 24px;
+  color: @white;
+  text-align: right;
+  background: @primary;
+  border-radius: 4px;
+  padding: 8px 20px;
+  border: none;
+}
+
+.button--catalog {
+  position: relative;
+  width: 141px;
+  font-size: 14px;
+  line-height: 20px;
+
+  &::before {
+   position: absolute;
+   content: url(../img/icon/basket-catalog.svg);
+   top: 10px;
+   right: 90px;
+
+  }
 }

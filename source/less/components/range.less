@@ -1,0 +1,58 @@
+.range {
+  margin-bottom: 86px;
+}
+.range__scale {
+  position: relative;
+  height: 2px;
+  width: 280px;
+  background: lightgrey;
+}
+
+.range__scale-bar {
+  position: absolute;
+  height: 4px;
+  width:241.26px;
+  background: @primarylighter;
+}
+
+.range__scale-toogle {
+  position: absolute;
+  border: 2px solid @primarylighter;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.range__scale-toogle--min {
+  top: -10px;
+  left: 0;
+}
+
+.range__scale-toogle--max {
+  top: -10px;
+  right: 0;
+}
+
+.range__scale-label {
+  position: absolute;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  background: @white;
+  text-align: center;
+  border: 2px solid @primarylighter;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.range__scale-label--min {
+  top: 30px;
+  left: 0;
+  color: @grey;
+}
+
+.range__scale-label--max {
+  top: 30px;
+  right: 0;
+}
