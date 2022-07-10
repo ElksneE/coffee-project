@@ -1,6 +1,17 @@
 .pagination {
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: @tablet-width) {
+    width: 395px;
+    margin-left: auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    bottom: 130px;
+    right: 40px;
+  }
 }
 
 .pagination__list {
@@ -10,35 +21,81 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  text-decoration: none;
   color: @black;
 }
 
 .pagination__link {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   width: 40px;
   padding: 8px;
   background: @white;
-  border: 0;
   border-radius: 4px;
-  cursor: pointer;
-  background-image: url(../img/icon/controls.svg);
-  background-position: center;
-  background-repeat: no-repeat;
- }
 
-.pagination__link--next {
+  &:hover, &:focus {
+    background: @primarylighter;
+    color: white;
+    outline: none;
+  }
+
+  &:active {
+    background: @primarydarker;
+    color: white;
+    outline: none;
+  }
+
+  &:disabled {
+    background: @grey;
+    color: white;
+  }
+
+  & svg {
+    fill:@primary;
+
+    &:hover, &:focus {
+      fill:@white;
+      outline: none;
+    }
+
+    &:active {
+      fill:@white;
+      outline: none;
+    }
+
+    &:disabled {
+      fill:@white;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 91px;
+  }
+}
+
+.pagination__img--next {
   transform: rotate(180deg);
 }
 
-.pagination__list-page {
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 24px;
+.pagination__img {
+  text-align: center;
+
+  & svg:hover,  & svg:focus {
+    fill:@white;
+    outline: none;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
 }
 
-.pagination__list-item {
+.pagination__list-page {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: @primary;
   margin: 0;
   padding: 0;
   width: 40px;
@@ -46,4 +103,27 @@
   text-align: center;
   background: @white;
   border-radius: 4px;
+
+  &:hover, &:focus {
+    background: @primarylighter;
+    color: @white;
+    outline: none;
+  }
+
+  &:active {
+    background: @primarydarker;
+    color: @white;
+  }
+
+  &:disabled {
+    background: @grey;
+  }
+}
+
+.pagination__page {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    display: block;
+  }
 }

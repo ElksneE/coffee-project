@@ -6,13 +6,25 @@
   height: 2px;
   width: 280px;
   background: lightgrey;
+
+  @media (min-width: @tablet-width) {
+    width: 223px;
+  }
 }
 
 .range__scale-bar {
   position: absolute;
   height: 4px;
-  width:241.26px;
+  width:260px;
   background: @primarylighter;
+
+  @media (min-width: @tablet-width) {
+    width: 192.14px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 290px;
+  }
 }
 
 .range__scale-toogle {
@@ -32,7 +44,7 @@
   right: 0;
 }
 
-.range__scale-label {
+.range__input {
   position: absolute;
   width: 125px;
   justify-content: center;
@@ -44,15 +56,37 @@
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
+
+  @media (min-width: @tablet-width) {
+    width: 96px;
+  }
 }
 
-.range__scale-label--min {
+.range__input--min {
   top: 30px;
   left: 0;
   color: @grey;
 }
 
-.range__scale-label--max {
+.range__input--max{
   top: 30px;
   right: 0;
+}
+
+.range__scale-inputs {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50px;
+    right: 135px;
+    height: 2px;
+    width: 10px;
+    background: @grey;
+
+    @media (min-width: @tablet-width) {
+      right: 105px;
+    }
+  }
 }

@@ -2,11 +2,25 @@
   font-size: 16px;
   line-height: 24px;
   color: @white;
-  text-align: right;
   background: @primary;
   border-radius: 4px;
-  padding: 8px 20px;
+  padding: 10px 24px;
   border: none;
+  font: inherit;
+
+  &:hover, &:focus {
+    background: @primarylighter;
+    outline: none;
+  }
+
+  &:active {
+    background: @primarydarker;
+    outline: none;
+  }
+
+  &:disabled {
+    background: @grey;
+  }
 }
 
 .button--catalog {
@@ -14,12 +28,14 @@
   width: 141px;
   font-size: 14px;
   line-height: 20px;
+  font: inherit;
+  text-align: right;
 
   &::before {
-   position: absolute;
-   content: url(../img/icon/basket-catalog.svg);
-   top: 10px;
-   right: 90px;
-
+    position: absolute;
+    content: url(../img/icon/basket-catalog.svg);
+    top: 10px;
+    right: 103px;
+    background-repeat: no-repeat;
   }
 }

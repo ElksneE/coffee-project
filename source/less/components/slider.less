@@ -1,15 +1,73 @@
 .slider {
-  padding-top: 310px;
-  padding-bottom: 60px;
+  position: relative;
+}
+
+.slider__wrapper {
+  padding-top: 20px;
+  padding-bottom: 75px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 60px;
+    padding-bottom: 308px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 84px;
+  }
+}
+
+.slider__wrapper--first {
   background: @flatwhite;
 }
 
+.slider__wrapper--second, .slider__wrapper--third {
+  display: none;
+}
+
+.slider__content-wrapper {
+  @media (min-width: @tablet-width) {
+    width: 553px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    width: 625px;
+    padding-top: 145px;
+  }
+
+  .title {
+    @media (min-width: @desktop-width) {
+      text-align: left;
+    }
+  }
+}
+
 .slider__img {
-  position: absolute;
-  z-index: 1;
   width: 280px;
   height: 280px;
-  top: 80px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    text-align: center;
+    height: 476px;
+    width: 476px;
+    top: 351px;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: static;
+    width: 600px;
+    height: 600px;
+    margin: 0 75px 0 0;
+  }
 }
 
 .slider__content {
@@ -17,27 +75,67 @@
   padding: 0;
   text-align: center;
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: @tablet-width) {
+    text-align: left;
+    margin-bottom: 45px;
+  }
 }
 
 .slider__controls {
   position: absolute;
-  top: 77%;
+  top: 53%;
   right: 0;
   display: flex;
   justify-content: space-between;
   width: 100vw;
   transform: translateY(-50%);
+
 }
 
 .slider__controls-button {
-  width: 11px;
-  height: 20px;
+  width: 20px;
+  height: 646px;
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  background-image: url("../img/icon/controls.svg");
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+    height: 640px;
+  }
+
+  @media (min-width: @desktop-width) {
+    height: 714px;
+  }
+
+  & svg {
+    fill:@primary;
+
+    &:disabled {
+      fill: @grey;
+    }
+  }
+
+  &:hover, &:focus {
+    background: linear-gradient(90deg, @white 0%, rgba(255, 255, 255, 0) 100%);
+    outline: none;
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    outline: none;
+  }
+
+  &:disabled {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
 }
 
 .slider__controls-button--prev {
@@ -47,4 +145,56 @@
 .slider__button-wrapper {
   display: flex;
   justify-content: space-between;
+  width: 230px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: 230px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .slider-wrapper .title {
+    text-align: left;
+  }
+}
+
+.slider__buttons {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    width: 202px;
+    position: absolute;
+    bottom: 65px;
+    left: 630px;
+  }
+}
+
+.slider__button {
+  background: @white;
+  width: 62px;
+  height: 4px;
+  border: none;
+
+  &:hover, &:focus {
+    background: #7859cf40;
+    outline: none;
+  }
+
+  &:active {
+    background: @primary;
+    outline: none;
+  }
+}
+
+.slider__button--current {
+  background: @primary;
 }

@@ -1,0 +1,236 @@
+.page-footer {
+  position: relative;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 35px;
+  }
+  @media (min-width: @desktop-width) {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 76px;
+    justify-content: space-between;
+  }
+}
+
+.page-footer__subtitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: @primary;
+}
+
+.page-footer__item {
+  margin: 0;
+  padding: 15px 0 6px;
+  color: @black;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.page-footer__social {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+  }
+  @media (min-width: @desktop-width) {
+    flex-direction: column;
+    justify-content:unset;
+    width: 317px;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    width: 100vw;
+    background: @secondary;
+    left: -20px;
+
+    @media (min-width: @tablet-width) {
+      width: 0;
+    }
+  }
+}
+
+.page-footer__social-link {
+  display: flex;
+  align-self: center;
+  padding: 10px;
+
+  &:hover, &:focus {
+    background: @secondary;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  &:active {
+    background: #7859cf40;
+    border-radius: 4px;
+  }
+
+  & svg {
+    fill:@grey;
+
+    &:hover, &:focus {
+      fill: @primary;
+      outline: none;
+    }
+
+    &:active {
+      fill: @primary;
+      outline: none;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    align-self: start;
+  }
+}
+
+.page-footer__nav {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    width: 100vw;
+    background: @secondary;
+    left: -20px;
+
+    @media (min-width: @tablet-width) {
+      width: 0;
+    }
+
+    @media (min-width: @tablet-width) {
+      width: 317px;
+    }
+  }
+}
+
+.page-footer-logohtml {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 35px 30px;
+
+  @media (min-width: @tablet-width) {
+    justify-content: center
+  }
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
+.page-footer-logohtml > .page-footer__item {
+  font-size: 12px;
+  line-height: 16px;
+  color: @grey;
+}
+
+.page-footer__item--address {
+  position: relative;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  &::before {
+    content: url(../img/icon/footer/union.svg);
+    padding-right: 10px;
+
+    @media (min-width: @tablet-width) {
+      position: absolute;
+      top: 11px;
+      left: -18px;
+    }
+  }
+}
+
+.page-footer__item--tel {
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  &::before {
+    content: url(../img/icon/footer/phone.svg);
+    padding-right: 10px;
+
+    @media (min-width: @tablet-width) {
+      position: absolute;
+      top: 11px;
+      left: -18px;
+    }
+  }
+}
+
+.page-footer__item--html {
+  padding: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: none;
+}
+
+.page-footer__social-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+@media (min-width: @tablet-width) {
+  .page-footer__nav-wrapper {
+    display: grid;
+    grid-template-columns: 222px 222px 222px;
+    column-gap: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1012px;
+    grid-template-columns: 317px 317px 317px;
+  }
+}
+
+.page-footer__title {
+  display: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: @black;
+    margin-bottom: 205px;
+  }
+}
+
+.page-footer__link-logo svg {
+  fill: @grey;
+
+  &:hover, &:focus {
+    fill: @primary;
+    outline: none;
+  }
+
+  &:active {
+    fill: @primarydarker;
+  }
+}

@@ -1,10 +1,23 @@
 .catalog {
+  position: relative;
   padding-bottom: 60px;
   padding-top: 50px;
   background-color: @lightestgrey;
 
+  @media (min-width: @tablet-width) {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 220px;
+    padding-top: 100px;
+  }
+
   & .subtitle {
-    margin-bottom: 20px;
+    @media (min-width: @desktop-width) {
+      margin-bottom: 38px;
+    }
   }
 }
 
@@ -13,56 +26,242 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 16px;
+  }
 }
 
 .catalog__sorting-select {
-  width: 125px;
+  width: 150px;
   height: 24px;
   border: none;
   color: @primarylighter;
   font-size: 16px;
   line-height: 24px;
   background-color: inherit;
+  font: inherit;
+
+  &:hover, &:focus {
+    background: #F0EBFF;
+    outline: none;
+  }
+
+  &:active {
+    background-color: inherit;
+    outline: none;
+  }
 }
 
 .catalog__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  text-decoration: none;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: auto auto auto;
+  }
 }
 
 .catalog__list-card {
   margin: 0;
   padding: 0;
   background-color: @white;
-  width: 280px;
   padding: 40px 20px 20px 20px;
   margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 35px;
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: auto;
+    margin: 0;
+    padding: 50px 30px 30px 30px;
+  }
 }
 
 .catalog__sorting {
   margin-bottom: 16px;
+
+  @media (min-width: @tablet-width) {
+    text-align: right;
+    margin-bottom: 28px;
+  }
 }
 
 .catalog__list-img {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 24px;
 }
 
 .catalog__list-title {
   margin: 0;
   padding: 0;
+  color: @black;
   margin-bottom: 24px;
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
+
+
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+    display: block;
+    margin-bottom: 10px;
+  }
 }
 
 .catalog__list-content {
   margin: 0;
   padding: 0;
   margin-bottom: 16px;
-  font-weight: 400;
 
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.catalog__wrapper-form {
+  @media (min-width: @tablet-width) {
+    margin-bottom: 65px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+}
+
+.catalog__wrapper-sorting {
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.catalog__form {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 103px;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: column;
+    margin-right: 116px;
+    justify-content: unset;
+  }
+}
+
+.catalog__form-filter{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 15px;
+  }
+}
+
+.catalog__form-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.catalog__form-mark {
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 2px solid @grey;
+}
+
+.catalog__form-mark--country {
+  width: 42px;
+  height: 24px;
+  border-radius: 12px;
+  background: @grey;
+}
+
+.catalog__form-button {
+  padding: 8px 20px;
+  background: @white;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  color: @primary;
+  font: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 36px;
+
+  &:hover, &:focus {
+    background: @primarylighter;
+    color: @white;
+    outline: none;
+  }
+
+  &:active {
+    background: @primarydarker;
+    color: @white;
+  }
+
+  &:disabled {
+    background: @lightgrey
+  }
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    width: 222px;
+    top: 283px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: static;
+  }
+}
+
+.catalog__form-subtitle {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 32px;
+  }
 }
