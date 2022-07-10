@@ -1,8 +1,22 @@
 .slider {
   position: relative;
+  width: 320px;
+  height: 656px;
+
+  @media (min-width: @tablet-width) {
+    width: 768px;
+    height: 828px;
+  }
+
+
+  @media (min-width: @desktop-width) {
+    width: 1440px;
+    height: 714px;
+  }
 }
 
 .slider__wrapper {
+  position: relative;
   padding-top: 20px;
   padding-bottom: 75px;
 
@@ -22,8 +36,14 @@
   background: @flatwhite;
 }
 
-.slider__wrapper--second, .slider__wrapper--third {
-  display: none;
+.slider__wrapper--second {
+
+  background: #EAE6FC;
+}
+
+.slider__wrapper--third {
+
+  background: #E5E6E8;
 }
 
 .slider__content-wrapper {
@@ -87,17 +107,6 @@
   }
 }
 
-.slider__controls {
-  position: absolute;
-  top: 53%;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-  transform: translateY(-50%);
-
-}
-
 .slider__controls-button {
   width: 20px;
   height: 646px;
@@ -139,9 +148,19 @@
 }
 
 .slider__controls-button--prev {
-  transform: rotate(180deg);
+  content: url(../img/icon/controls.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+.slider__controls-button--next {
+  content: url(../img/icon/controls.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
 .slider__button-wrapper {
   display: flex;
   justify-content: space-between;
@@ -168,6 +187,7 @@
   display: none;
 
   @media (min-width: @desktop-width) {
+    position: absolute;
     display: block;
     display: flex;
     justify-content: space-between;
@@ -197,4 +217,12 @@
 
 .slider__button--current {
   background: @primary;
+}
+
+.swiper-button-prev:after {
+  content: url(../img/icon/controls.svg);
+}
+
+.swiper-button-next:after {
+  content: url(../img/icon/controls.svg);
 }

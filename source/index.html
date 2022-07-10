@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-    crossorigin=""></script>
+
+      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   </head>
   <body class="page__body">
     <svg style="display: none">
@@ -34,14 +33,14 @@
       <div class="main-nav__list-wrapper">
         <ul class="main-nav__list main-nav__list--user">
           <li class="main-nav__item main-nav__item--user">
-            <a href="#" class="main-nav__link">
+            <a href="#" class="main-nav__link main-nav__link--user">
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.667 4a2.667 2.667 0 1 1-5.334 0 2.667 2.667 0 0 1 5.334 0ZM12 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm-8.803 8.31C4.437 11.277 6.16 10.667 8 10.667s3.564.61 4.803 1.643c1.232 1.027 1.864 2.362 1.864 3.69H16c0-1.768-.843-3.464-2.343-4.714-1.5-1.25-3.535-1.953-5.657-1.953s-4.157.703-5.657 1.953S0 14.232 0 16h1.333c0-1.328.632-2.663 1.864-3.69Z"/></svg>
               <span class="main-nav__icon">Войти</span>
             </a>
 
           </li>
           <li class="main-nav__item main-nav__item--user">
-            <a href="#" class="main-nav__link" >
+            <a href="#" class="main-nav__link main-nav__link--user" >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.66 3.875.234 2.792h4.213l.232-2.792a2.347 2.347 0 1 0-4.678 0Zm5.784 2.792.224-2.68a3.68 3.68 0 1 0-7.336 0l.224 2.68H0L.19 8l.816 5.71A2.667 2.667 0 0 0 3.646 16h8.708a2.667 2.667 0 0 0 2.64-2.29L15.81 8 16 6.667h-4.556ZM11.334 8h-.054l-.222 2.667h3.024L14.462 8h-3.129ZM9.941 8H6.058l.222 2.667h3.44L9.942 8ZM4.72 8H1.537l.381 2.667h3.024L4.72 8Zm1.893 6.667L6.391 12H9.61l-.222 2.667H6.613ZM10.947 12l-.222 2.667h1.629c.663 0 1.226-.488 1.32-1.145L13.89 12h-2.944Zm-5.894 0 .222 2.667H3.646a1.333 1.333 0 0 1-1.32-1.145L2.11 12h2.944Z"/></svg>
               <span class="main-nav__icon"> Корзина</span>
             </a>
@@ -79,159 +78,108 @@
     </nav>
   </header>
   <main class="page-main">
-  <section class="slider">
-    <div class="slider__wrapper slider__wrapper--first container">
-      <div class="slider__img">
-        <picture>
-          <source media="(min-width: 1440px)" srcset="./img/slider/slider-white-desktop.png, ./img/slider/slider-white-desktop@2x.png" width="600" height="600">
-          <source media="(min-width: 768px)" srcset="./img/slider/slider-white-tablet.png, ./img/slider/slider-white-tablet@2x.png" width="476" height="476">
-          <img src="./img/slider/slider-white-mobile.png" srcset="./img/slider/slider-white-mobile@2x.png" alt="Coffee" width="280" height="280">
-        </picture>
-      </div>
-      <div class="slider__controls">
-        <button class="slider__controls-button slider__controls-button--next" type="button">
-          <span class="visually-hidden">Предыдущий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-        <button class="slider__controls-button slider__controls-button--prev" type="button">
-          <span class="visually-hidden">Следующий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="slider__content-wrapper">
-        <h2 class="title">Новинка!</h2>
-        <h3 class="subtitle subtitle--slider">Декаф Флэт Уайт</h3>
-
-        <p class="slider__content">
-          Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня
-        </p>
-        <div class="slider__button-wrapper">
-          <div class="price-wrapper">
-            <span class="price price-old">295P</span>
-          <span class="price price-new">225P</span>
-          </div>
-          <button class="button">Заказать</button>
+  <section class="slider swiper">
+    <div class="slider__swiper swiper-wrapper">
+      <div class="slider__wrapper slider__wrapper--first container swiper-slide">
+        <div class="slider__img">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="./img/slider/slider-white-desktop.png, ./img/slider/slider-white-desktop@2x.png" width="600" height="600">
+            <source media="(min-width: 768px)" srcset="./img/slider/slider-white-tablet.png, ./img/slider/slider-white-tablet@2x.png" width="476" height="476">
+            <img src="./img/slider/slider-white-mobile.png" srcset="./img/slider/slider-white-mobile@2x.png" alt="Coffee" width="280" height="280">
+          </picture>
         </div>
+        <div class="slider__content-wrapper">
+          <h2 class="title">Новинка!</h2>
+          <h3 class="subtitle subtitle--slider">Декаф Флэт Уайт</h3>
+
+          <p class="slider__content">
+            Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня
+          </p>
+          <div class="slider__button-wrapper">
+            <div class="price-wrapper">
+              <span class="price price-old">295P</span>
+            <span class="price price-new">225P</span>
+            </div>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+
       </div>
-      <div class="slider__buttons">
-        <button class="slider__button slider__button--current" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
+
+      <div class="slider__wrapper slider__wrapper--second container swiper-slide">
+        <div class="slider__img">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="./img/slider/slider-purple-desktop.png, ./img/slider/slider-purple-desktop@2x.png" width="600" height="600">
+            <source media="(min-width: 768px)" srcset="./img/slider/slider-purple-tablet.png, ./img/slider/slider-purple-tablet@2x.png" width="476" height="476">
+            <img src="./img/slider/slider-purple-mobile.png" srcset="./img/slider/slider-purple-mobile@2x.png" alt="Coffee" width="280" height="280">
+          </picture>
+        </div>
+        <div class="slider__content-wrapper">
+          <h2 class="title">Новинка!</h2>
+          <h3 class="subtitle subtitle--slider">Лавандовый Латте</h3>
+
+          <p class="slider__content">
+            Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор
+          </p>
+          <div class="slider__button-wrapper">
+            <div class="price-wrapper">
+              <span class="price price-old">295P</span>
+            <span class="price price-new">225P</span>
+            </div>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slider__wrapper slider__wrapper--third container swiper-slide">
+        <div class="slider__img">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="./img/slider/slider-black-desktop.png, ./img/slider/slider-black-desktop@2x.png" width="600" height="600">
+            <source media="(min-width: 768px)" srcset="./img/slider/slider-black-tablet.png, ./img/slider/slider-black-tablet@2x.png" width="476" height="476">
+            <img src="./img/slider/slider-black-mobile.png" srcset="./img/slider/slider-black-mobile@2x.png" alt="Coffee" width="280" height="280">
+          </picture>
+        </div>
+        <div class="slider__content-wrapper">
+          <h2 class="title">Новинка!</h2>
+          <h3 class="subtitle subtitle--slider">Тройной Эспрессо</h3>
+
+          <p class="slider__content">
+            Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость
+          </p>
+          <div class="slider__button-wrapper">
+            <div class="price-wrapper">
+              <span class="price price-old">395P</span>
+            <span class="price price-new">375P</span>
+            </div>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="slider__wrapper slider__wrapper--second container">
-      <div class="slider__img">
-        <picture>
-          <source media="(min-width: 1440px)" srcset="./img/slider/slider-purple-desktop.png, ./img/slider/slider-purple-desktop@2x.png" width="600" height="600">
-          <source media="(min-width: 768px)" srcset="./img/slider/slider-purple-table.png, ./img/slider/slider-purple-table@2x.png" width="476" height="476">
-          <img src="./img/slider/slider-purple-mobile.png" srcset="./img/slider/slider-purple-mobile@2x.png" alt="Coffee" width="280" height="280">
-        </picture>
-      </div>
-      <div class="slider__controls">
-        <button class="slider__controls-button slider__controls-button--next" type="button">
-          <span class="visually-hidden">Предыдущий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-        <button class="slider__controls-button slider__controls-button--prev" type="button">
-          <span class="visually-hidden">Следующий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="slider__content-wrapper">
-        <h2 class="title">Новинка!</h2>
-        <h3 class="subtitle subtitle--slider">Лавандовый Латте</h3>
-
-        <p class="slider__content">
-          Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор
-        </p>
-        <div class="slider__button-wrapper">
-          <div class="price-wrapper">
-            <span class="price price-old">295P</span>
-          <span class="price price-new">225P</span>
-          </div>
-          <button class="button">Заказать</button>
-        </div>
-      </div>
-      <div class="slider__buttons">
-        <button class="slider__button slider__button--current" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-      </div>
+    <div class="slider__controls">
+      <button class="slider__controls-button slider__controls-button--prev swiper-button-prev" type="button">
+        <span class="visually-hidden">Предыдущий слайдер</span>
+      </button>
+      <button class="slider__controls-button slider__controls-button--next swiper-button-next " type="button">
+        <span class="visually-hidden">Следующий слайдер</span>
+      </button>
     </div>
 
-    <div class="slider__wrapper slider__wrapper--third container">
-      <div class="slider__img">
-        <picture>
-          <source media="(min-width: 1440px)" srcset="./img/slider/slider-black-desktop.png, ./img/slider/slider-black-desktop@2x.png" width="600" height="600">
-          <source media="(min-width: 768px)" srcset="./img/slider/slider-black-table.png, ./img/slider/slider-black-table@2x.png" width="476" height="476">
-          <img src="./img/slider/slider-black-mobile.png" srcset="./img/slider/slider-black-mobile@2x.png" alt="Coffee" width="280" height="280">
-        </picture>
-      </div>
-      <div class="slider__controls">
-        <button class="slider__controls-button slider__controls-button--next" type="button">
-          <span class="visually-hidden">Предыдущий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-        <button class="slider__controls-button slider__controls-button--prev" type="button">
-          <span class="visually-hidden">Следующий слайдер</span>
-          <svg width="11" height="20">
-            <use xlink:href="#controls"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="slider__content-wrapper">
-        <h2 class="title">Новинка!</h2>
-        <h3 class="subtitle subtitle--slider">Тройной Эспрессо</h3>
-
-        <p class="slider__content">
-          Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость
-        </p>
-        <div class="slider__button-wrapper">
-          <div class="price-wrapper">
-            <span class="price price-old">395P</span>
-          <span class="price price-new">375P</span>
-          </div>
-          <button class="button">Заказать</button>
-        </div>
-      </div>
-      <div class="slider__buttons">
-        <button class="slider__button slider__button--current" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-        <button class="slider__button" type="button">
-          <span class="visually-hidden"></span>
-        </button>
-      </div>
+    <div class="slider__buttons swiper-pagination">
+      <button class="slider__button slider__button--current" type="button">
+        <span class="visually-hidden"></span>
+      </button>
+      <button class="slider__button" type="button">
+        <span class="visually-hidden"></span>
+      </button>
+      <button class="slider__button" type="button">
+        <span class="visually-hidden"></span>
+      </button>
     </div>
-
   </section>
-
   <section class="advantage container">
       <h2 class="title">Преимущества</h2>
       <h3 class="subtitle">Главные причины выбрать Drink2Go</h3>
@@ -275,7 +223,7 @@
     <div class="catalog__wrapper-form">
       <form action="#" class="catalog__form" method="get">
         <fieldset class="catalog__form-filter">
-          <legent class="catalog__form-subtitle">Цена</legent>
+          <div class="catalog__form-subtitle">Цена</div>
           <div class="range">
             <div class="range__scale">
               <div class="range__scale-bar">
@@ -299,58 +247,58 @@
           </div>
         </fieldset>
         <fieldset class="catalog__form-filter">
-          <legent class="catalog__form-subtitle">Наличие товара</legent>
+          <div class="catalog__form-subtitle">Наличие товара</div>
           <label class="catalog__form-label">
-              <input type="radio" class="visually-hidden catalog__form-input">
+              <input type="radio" class="catalog__form-input" name="composition">
               <span class="catalog__form-mark"></span>
               Неважно
           </label>
 
           <label class="catalog__form-label">
-            <input type="radio" class="visually-hidden catalog__form-input">
-            <span class="catalog__form-mark"></span>
+            <input type="radio" class="catalog__form-input catalog__form-input--product" name="product">
+            <span class="catalog__form-mark catalog__form-mark--product"></span>
             Только животное
           </label>
           <label class="catalog__form-label">
-            <input type="radio" class="visually-hidden catalog__form-input">
-            <span class="catalog__form-mark"></span>
+            <input type="radio" class="catalog__form-input catalog__form-input--product" name="product">
+            <span class="catalog__form-mark catalog__form-mark--product"></span>
             Только растительное
           </label>
 
           <label class="catalog__form-label">
-            <input type="radio" class="visually-hidden catalog__form-input">
-            <span class="catalog__form-mark"></span>
+            <input type="radio" class="catalog__form-input catalog__form-input--product" name="product">
+            <span class="catalog__form-mark catalog__form-mark--product"></span>
             Без молока
           </label>
 
 
         </fieldset>
         <fieldset class="catalog__form-filter">
-          <legent class="catalog__form-subtitle">Страна произрастания</legent>
+          <div class="catalog__form-subtitle">Страна произрастания</div>
 
-          <label class="catalog__form-label catalog__form-label--country">
-            <input type="radio" class="visually-hidden catalog__form-input catalog__form-input--country">
+          <label for="Brazil" class="catalog__form-label catalog__form-label--country">
+            <input id="Brazil" type="radio" class="catalog__form-input catalog__form-input--country">
             <span class="catalog__form-mark catalog__form-mark--country"></span>
             Бразилия
           </label>
-          <label class="catalog__form-label catalog__form-label--country">
-            <input type="checkbox" class="visually-hidden catalog__form-input catalog__form-input--country">
+          <label for="Ethiopia" class="catalog__form-label catalog__form-label--country">
+            <input id="Ethiopia" type="checkbox" class="catalog__form-input catalog__form-input--country">
             <span class="catalog__form-mark catalog__form-mark--country"></span>
             Эфиопия
           </label>
-          <label class="catalog__form-label catalog__form-label--country">
-            <input type="checkbox" class="visually-hidden catalog__form-input catalog__form-input--country">
+          <label for="Colombia" class="catalog__form-label catalog__form-label--country">
+            <input id="Colombia" type="checkbox" class="catalog__form-input catalog__form-input--country">
             <span class="catalog__form-mark catalog__form-mark--country"></span>
             Колумбия
           </label>
-          <label class="catalog__form-label catalog__form-label--country">
-            <input type="checkbox" class="visually-hidden catalog__form-input catalog__form-input--country">
+          <label for="Costa-Rica" class="catalog__form-label catalog__form-label--country">
+            <input id="Costa-Rica" type="checkbox" class="catalog__form-input catalog__form-input--country">
             <span class="catalog__form-mark catalog__form-mark--country"></span>
             Коста-Рика
           </label>
 
-          <label class="catalog__form-label catalog__form-label--country">
-            <input type="checkbox" class="visually-hidden catalog__form-input catalog__form-input--country">
+          <label for="Peru" class="catalog__form-label catalog__form-label--country">
+            <input id="Peru" type="checkbox" class="catalog__form-input catalog__form-input--country">
             <span class="catalog__form-mark catalog__form-mark--country"></span>
             Перу
           </label>
@@ -549,7 +497,10 @@
         </a>
     </div>
   </footer>
-
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
   <script src="js/script.js"></script>
   </body>
 </html>

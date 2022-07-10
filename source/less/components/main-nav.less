@@ -25,16 +25,17 @@
   }
 }
 
-.main-nav__item--current {
-  @media (min-width: @tablet-width) {
-    color: @primary;
-    border-bottom: 2px solid @primary;
-  }
-}
 .main-nav__link {
+  &:hover,  &:focus {
+    outline: none;
+  }
     @media (min-width: @desktop-width) {
     display: flex;
     justify-content: space-between;
+  }
+
+  & svg:hover, svg:focus {
+    fill:@primary;
   }
 }
 
@@ -46,7 +47,7 @@
     outline: none;
   }
 
-  &:active svg:hover  svg:focus {
+  &:active a svg,  &:focus a svg  {
     fill: @primary;
     outline: none;
   }
@@ -63,6 +64,16 @@
     outline: none;
   }
 }
+
+.main-nav__item--current {
+  color: @primary;
+
+  @media (min-width: @tablet-width) {
+    color: @primary;
+    border-bottom: 2px solid @primary;
+  }
+}
+
 .main-nav__icon {
   color: black;
   font-weight: 500;
@@ -77,6 +88,7 @@
     display: block;
   }
 }
+
 .main-nav__list {
   padding: 0;
   margin: 0;
@@ -88,6 +100,26 @@
   line-height: 16px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+.main-nav__item-link {
+  color: @black;
+
+  &:hover, &:focus {
+    color: @primary;
+    outline: none;
+  }
+}
+
+.main-nav__link--user {
+  &:hover, &:focus {
+    color: @primary;
+    outline: none;
+  }
+}
+
+.main-nav__item-link--current {
+  color: @primary;
 }
 
 .main-nav__item-link--main {
@@ -112,7 +144,6 @@
   &:hover {
     background-color: @secondary;
   }
-
   @media (min-width: @tablet-width) {
     display: none;
   }
@@ -127,6 +158,11 @@
   margin: 0;
   padding: 0;
   top: 0;
+
+  &:focus {
+    outline: none;
+    background: @primary;
+  }
 
   &::before {
     content: "";
@@ -179,6 +215,7 @@
   width: 100vw;
   list-style-type: none;
   background: @white;
+  display: none;
 
   @media (min-width: @tablet-width) {
     display: block;
@@ -219,8 +256,8 @@
   }
 }
 
-.main-nav__list--main-current {
-  display: none;
+.main-nav__list--main--current{
+  display: block;
 
   @media (min-width: @tablet-width) {
     display:flex;

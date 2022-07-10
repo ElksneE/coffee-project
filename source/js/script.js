@@ -1,8 +1,11 @@
 // header
+const wrapperButton = document.querySelector('.main-nav__toggle-wrapper');
+const button = document.querySelector('.main-nav__toggle');
+const nav = document.querySelector('.main-nav__list--main');
 
-document.querySelector('.main-nav__toggle-wrapper')
-  .addEventListener('click', function(){
-  document.querySelector('.main-nav__toggle').classList.toggle('main-nav__toggle--active')
+wrapperButton .addEventListener('click', function(){
+  button.classList.toggle('main-nav__toggle--active');
+  nav.classList.toggle('main-nav__list--main--current');
 })
 
 
@@ -16,3 +19,32 @@ const greenIcon = L.icon({
   iconSize:     [38, 50],
 });
 L.marker([59.968137, 30.316272], {icon: greenIcon}).addTo(map);
+
+// const swiper = new Swiper(".Swiper", {
+//   cssMode: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev"
+//   },
+//   pagination: false,
+//   mousewheel: true,
+//   keyboard: true
+// });
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.slider__controls-button--next',
+    prevEl: '.slider__controls-button--prev',
+  },
+
+});
